@@ -1,0 +1,255 @@
+.user-device-card {
+  background-color: #fff;
+  border: 1px solid #f3f4f6;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.user-device-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-device-image {
+  width: 100%;
+}
+
+.user-device-image img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.user-device-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 1rem 0;
+}
+
+.user-device-info {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.user-device-icon {
+  background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-white {
+  color: #fff;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.user-device-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.user-device-serial {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.user-device-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-available {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-assigned {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-maintenance {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.status-retired {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.user-device-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.detail-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #9ca3af;
+}
+
+.condition-text.condition-excellent {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.condition-text.condition-good {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.condition-text.condition-fair {
+  color: #ca8a04;
+  font-weight: 500;
+}
+
+.condition-text.condition-poor {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.assigned-to {
+  font-weight: 500;
+  color: #111827;
+}
+
+.user-device-notes {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.user-device-actions {
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.user-btn-disabled {
+  background: #16a34a;
+  font-size: 1rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: not-allowed;
+  border: none;
+}
+
+.user-btn-assign {
+  flex: 1;
+  background-color: #0065ff;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0065ff;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.user-btn-assign:hover {
+  color: #0065ff;
+  background-color: #ffffff;
+}
+
+/* --------------------------------------------------- */
+
+/* Modal Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Modal Box */
+.modal-box {
+  background: #fff;
+  padding: 25px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.2s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  padding: 8px 14px;
+  background: #ccc;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  padding: 8px 14px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
