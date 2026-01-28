@@ -3,6 +3,7 @@ import { LayoutDashboard, Package, TicketCheck } from "lucide-react";
 import Navbar from "../components/navbar/Navbar";
 import UserDevicesView from "../components/user/userDevices/UserDevicesView";
 import MyTicketsView from "../components/user/userTicket/MyTicketsView";
+import AnimatedBackground from "../components/animatedBackground/AnimatedBackground";
 import {
   mockDevices,
   mockEmployees,
@@ -21,23 +22,22 @@ function Receiver() {
   const stats = useMemo(() => {
     const totalDevices = devices.length;
     const assignedDevices = devices.filter(
-      (d) => d.status === "assigned"
+      (d) => d.status === "assigned",
     ).length;
     const availableDevices = devices.filter(
-      (d) => d.status === "available"
+      (d) => d.status === "available",
     ).length;
     const maintenanceDevices = devices.filter(
-      (d) => d.status === "maintenance"
+      (d) => d.status === "maintenance",
     ).length;
     const totalEmployees = employees.length;
     const activeEmployees = employees.filter(
-      (e) => e.status === "active"
+      (e) => e.status === "active",
     ).length;
     const totalPhones = devices.filter((d) => d.device_type === "phone").length;
     const totalLaptops = devices.filter(
-      (d) => d.device_type === "laptop"
+      (d) => d.device_type === "laptop",
     ).length;
-
     return {
       totalDevices,
       assignedDevices,
@@ -52,7 +52,7 @@ function Receiver() {
 
   const getEmployeeForDevice = (deviceId) => {
     const assignment = assignments.find(
-      (a) => a.device_id === deviceId && a.status === "active"
+      (a) => a.device_id === deviceId && a.status === "active",
     );
     return assignment
       ? employees.find((e) => e.id === assignment.employee_id)
@@ -66,8 +66,8 @@ function Receiver() {
 
   return (
     <div className="receiver-main-container">
+      <AnimatedBackground />
       <Navbar />
-
       {/* Tabs */}
       <div className="receiver-tabs-container">
         <div className="receiver-tabs-card">
@@ -88,7 +88,6 @@ function Receiver() {
           })}
         </div>
       </div>
-
       {/* Main Content */}
       <div className="receiver-content">
         {activeTab === "devices" && (

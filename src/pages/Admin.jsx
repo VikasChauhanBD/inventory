@@ -12,6 +12,7 @@ import DevicesView from "../components/admin/devices/DevicesView";
 import EmployeesView from "../components/admin/employees/EmployeesView";
 import AssignmentsView from "../components/admin/assignments/AssignmentsView";
 import TicketRequestsView from "../components/admin/ticketRequestsView/TicketRequestsView";
+import AnimatedBackground from "../components/animatedBackground/AnimatedBackground";
 import {
   mockDevices,
   mockEmployees,
@@ -29,21 +30,21 @@ function Admin() {
   const stats = useMemo(() => {
     const totalDevices = devices.length;
     const assignedDevices = devices.filter(
-      (d) => d.status === "assigned"
+      (d) => d.status === "assigned",
     ).length;
     const availableDevices = devices.filter(
-      (d) => d.status === "available"
+      (d) => d.status === "available",
     ).length;
     const maintenanceDevices = devices.filter(
-      (d) => d.status === "maintenance"
+      (d) => d.status === "maintenance",
     ).length;
     const totalEmployees = employees.length;
     const activeEmployees = employees.filter(
-      (e) => e.status === "active"
+      (e) => e.status === "active",
     ).length;
     const totalPhones = devices.filter((d) => d.device_type === "phone").length;
     const totalLaptops = devices.filter(
-      (d) => d.device_type === "laptop"
+      (d) => d.device_type === "laptop",
     ).length;
 
     return {
@@ -68,7 +69,7 @@ function Admin() {
 
   const getEmployeeForDevice = (deviceId) => {
     const assignment = assignments.find(
-      (a) => a.device_id === deviceId && a.status === "active"
+      (a) => a.device_id === deviceId && a.status === "active",
     );
     return assignment
       ? employees.find((e) => e.id === assignment.employee_id)
@@ -80,11 +81,12 @@ function Admin() {
     { id: "devices", label: "Devices", icon: Package },
     { id: "employees", label: "Employees", icon: Users },
     { id: "assignments", label: "Assignments", icon: FileText },
-    { id: "ticketrequests", label: "Ticket Requests", icon: Ticket }, // ⬅ NEW TAB
+    { id: "ticketrequests", label: "Ticket Requests", icon: Ticket },
   ];
 
   return (
     <div className="admin-main-container">
+      <AnimatedBackground />
       <Navbar />
 
       {/* Tabs */}
@@ -125,7 +127,7 @@ function Admin() {
             employees={employees}
             getDeviceCountForEmployee={(id) =>
               assignments.filter(
-                (a) => a.employee_id === id && a.status === "active"
+                (a) => a.employee_id === id && a.status === "active",
               ).length
             }
           />

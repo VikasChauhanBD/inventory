@@ -1,6 +1,6 @@
 .admin-main-container {
+  position: relative;
   min-height: 100vh;
-  background-color: #f9fafb;
 }
 
 .admin-tabs-container {
