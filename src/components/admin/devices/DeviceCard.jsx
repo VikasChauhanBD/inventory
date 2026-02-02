@@ -104,9 +104,9 @@ export default function DeviceCard({ device, onAssign, onEdit, assignedTo }) {
 
       {/* ---------------- Edit Modal ---------------- */}
       {showEditModal && (
-        <div className="modal-overlay">
-          <div className="modal-box">
-            <div className="modal-header">
+        <div className="device-modal-overlay">
+          <div className="device-modal-box">
+            <div className="device-modal-header">
               <h2>Edit Device</h2>
               <span
                 className="close-icon"
@@ -116,7 +116,7 @@ export default function DeviceCard({ device, onAssign, onEdit, assignedTo }) {
               </span>
             </div>
 
-            <div className="modal-body">
+            <div className="device-modal-body">
               <label>Device Type</label>
               <select
                 value={editDevice.device_type}
@@ -233,7 +233,7 @@ export default function DeviceCard({ device, onAssign, onEdit, assignedTo }) {
               )}
             </div>
 
-            <div className="modal-actions">
+            <div className="device-modal-actions">
               <button
                 className="btn-cancel"
                 onClick={() => setShowEditModal(false)}

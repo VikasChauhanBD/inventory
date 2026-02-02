@@ -7,11 +7,14 @@
   padding: 1rem;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .device-card:hover {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
   transform: translateY(-5px);
+  z-index: 2;
 }
 
 .device-image {
@@ -180,7 +183,7 @@
 }
 
 /* ----------------------- Modal box --------------------- */
-.modal-overlay {
+.device-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -192,10 +195,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 99999;
 }
 
-.modal-box {
+.device-modal-box {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -209,6 +212,8 @@
   flex-direction: column;
   overflow: hidden;
   animation: popIn 0.3s ease;
+  position: relative;
+  z-index: 100000;
 }
 
 @keyframes popIn {
@@ -222,14 +227,14 @@
   }
 }
 
-.modal-header {
+.device-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
 }
 
-.modal-header h2 {
+.device-modal-header h2 {
   margin: 0;
   color: #111827;
   font-weight: 600;
@@ -245,7 +250,7 @@
   color: #111827;
 }
 
-.modal-body {
+.device-modal-body {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -254,29 +259,29 @@
   padding-right: 5px;
 }
 
-.modal-body::-webkit-scrollbar {
+.device-modal-body::-webkit-scrollbar {
   width: 6px;
 }
 
-.modal-body::-webkit-scrollbar-thumb {
+.device-modal-body::-webkit-scrollbar-thumb {
   background-color: rgba(107, 114, 128, 0.5);
   border-radius: 3px;
 }
 
-.modal-body::-webkit-scrollbar-track {
+.device-modal-body::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-.modal-body label {
+.device-modal-body label {
   font-weight: 600;
   margin-bottom: 6px;
   display: block;
   color: #374151;
 }
 
-.modal-body input,
-.modal-body select,
-.modal-body textarea {
+.device-modal-body input,
+.device-modal-body select,
+.device-modal-body textarea {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
@@ -289,21 +294,21 @@
   box-sizing: border-box;
 }
 
-.modal-body input:focus,
-.modal-body select:focus,
-.modal-body textarea:focus {
+.device-modal-body input:focus,
+.device-modal-body select:focus,
+.device-modal-body textarea:focus {
   outline: none;
   border: 1px solid #0065ff;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 0 3px rgba(0, 101, 255, 0.1);
 }
 
-.modal-body textarea {
+.device-modal-body textarea {
   min-height: 80px;
   resize: vertical;
 }
 
-.modal-actions {
+.device-modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -351,7 +356,7 @@
 /* ------------------------- Responsive Style ------------------ */
 
 @media (max-width: 768px) {
-  .modal-box {
+  .device-modal-box {
     width: 90%;
     max-width: 400px;
   }
