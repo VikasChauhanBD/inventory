@@ -8,16 +8,16 @@ export default function MyTicketsView({ tickets, devices }) {
   };
 
   return (
-    <div className="tickets-container">
-      <h2 className="tickets-heading">My Tickets</h2>
+    <div className="user-tickets-container">
+      <h2 className="user-tickets-heading">My Tickets</h2>
 
       {tickets.length === 0 ? (
-        <p className="no-tickets">No tickets found.</p>
+        <p className="user-no-tickets">No tickets found.</p>
       ) : (
-        <div className="tickets-list">
+        <div className="user-tickets-list">
           {tickets.map((ticket) => (
-            <div key={ticket.id} className="ticket-card">
-              <h3 className="ticket-title">{ticket.title}</h3>
+            <div key={ticket.id} className="user-ticket-card">
+              <h3 className="user-ticket-title">{ticket.title}</h3>
 
               <p>
                 <strong>Device:</strong> {getDeviceName(ticket.device_id)}
@@ -32,10 +32,10 @@ export default function MyTicketsView({ tickets, devices }) {
                 </span>
               </p>
 
-              <p className="ticket-desc">{ticket.description}</p>
+              <p className="user-ticket-desc">{ticket.description}</p>
 
-              <div className="ticket-footer">
-                <span className="ticket-date">
+              <div className="user-ticket-footer">
+                <span className="user-ticket-date">
                   Created: {new Date(ticket.created_at).toLocaleDateString()}
                 </span>
               </div>

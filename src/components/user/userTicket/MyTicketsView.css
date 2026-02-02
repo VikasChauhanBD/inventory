@@ -1,26 +1,26 @@
-.tickets-container {
+.user-tickets-container {
   padding: 20px;
 }
 
-.tickets-heading {
+.user-tickets-heading {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.no-tickets {
+.user-no-tickets {
   text-align: center;
   padding: 20px;
   font-size: 1.1rem;
 }
 
-.tickets-list {
+.user-tickets-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
 }
 
-.ticket-card {
+.user-ticket-card {
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -31,19 +31,19 @@
   transition: all 0.3s ease;
 }
 
-.ticket-title {
+.user-ticket-title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-.ticket-desc {
+.user-ticket-desc {
   margin: 10px 0;
   font-size: 0.95rem;
   color: #555;
 }
 
-.ticket-footer {
+.user-ticket-footer {
   margin-top: 10px;
   font-size: 0.85rem;
   color: #777;
